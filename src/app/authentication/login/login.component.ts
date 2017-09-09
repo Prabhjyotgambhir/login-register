@@ -17,12 +17,13 @@ export class LoginComponent implements OnInit {
   user = { password: "prabhjyot", repassword: "prabhjyot", name: "Prabhjyot", username: "prabhjyot", email: "prabhjyotgambhir1994@gmail.com", mobileno: "9990847576"};
   
   login() {
-    this.http.post("/account/login", this.user).subscribe(data => {
-      if(data) {
-        localStorage.setItem("currentUser", JSON.stringify({name: data.user[0].name, username: data.user[0].username, email: data.user[0].email}));
-        this.redirectService.redirectHome();     
-      }
-    });
+    // this.http.post("/account/login", this.user).subscribe(data => {
+    //   if(data) {
+    //     localStorage.setItem("currentUser", JSON.stringify({name: data.user[0].name, username: data.user[0].username, email: data.user[0].email}));
+    //     this.redirectService.redirectHome();     
+    //   }
+    // });
+    this.redirectService.redirectHome();
   }
   
   ngOnInit() {
